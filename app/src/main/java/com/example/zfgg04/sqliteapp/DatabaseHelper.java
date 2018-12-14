@@ -2,6 +2,7 @@ package com.example.zfgg04.sqliteapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
@@ -49,5 +50,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         else
             return true;
+    }
+
+    //To show the table on view
+    public Cursor getAllData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Get all data in the db instance
+        Cursor res = db.rawQuery("select * from "+TABLE_MAME,null);
+        return res;
     }
 }

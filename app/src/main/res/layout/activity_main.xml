@@ -36,7 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/editText_surname"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="162dp"
+        android:layout_marginTop="149dp"
+        android:layout_marginEnd="0dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Marks" />
@@ -69,18 +70,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="179dp"
-        android:layout_marginEnd="71dp"
+        android:layout_marginTop="163dp"
+        android:layout_marginEnd="68dp"
         android:layout_toStartOf="@+id/editText_marks"
         android:text="Marks" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_addData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="179dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginBottom="194dp"
         android:text="Add Data" />
+
+    <Button
+        android:id="@+id/button_viewAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button_addData"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="97dp"
+        android:layout_marginEnd="146dp"
+        android:text="View all" />
 
 </RelativeLayout>
