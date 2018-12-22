@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">SqliteApp</string>
+    <string name="update">Update</string>
+    <string name="edit_name">Name</string>
+    <string name="editl_surname">Surname</string>
+    <string name="edit_marks">Marks</string>
+    <string name="text_name">Name</string>
+    <string name="text_surname">Surname</string>
+    <string name="text_marks">Marks</string>
+    <string name="add_data">Add Data</string>
+    <string name="view_all">View all</string>
+    <string name="text_id">Id</string>
+    <string name="edit_id">Id</string>
+    <string name="delete">Delete</string>
 </resources>

@@ -12,9 +12,12 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper myDb;
-    EditText editName,editSurname,editMarks;
+    EditText editName,editSurname,editMarks,editId;
     Button btn_getData;
     Button btn_viewAll;
+    Button btn_update;
+    Button btn_delete;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,8 +27,11 @@ public class MainActivity extends AppCompatActivity {
         editName = findViewById(R.id.editText_name);
         editSurname = findViewById(R.id.editText_surname);
         editMarks = findViewById(R.id.editText_marks);
+        editId = findViewById(R.id.editText_id);
         btn_getData = findViewById(R.id.button_addData);
         btn_viewAll = findViewById(R.id.button_viewAll);
+        btn_update = findViewById(R.id.button_update);
+        btn_delete = findViewById(R.id.button_delete);
 
         btn_getData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +67,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isUpdated = myDb.updateData(
+                        editId.getText().toString(),
+                        editName.getText().toString(),
+                        editSurname.getText().toString(),
+                        editMarks.getText().toString());
+                if(isUpdated)
+                    Toast.makeText(MainActivity.this,
+                            "Data updated",Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(MainActivity.this,
+                            "Data not updated",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer deletedRows = myDb.deleteDate(editId.getText().toString());
+                if(deletedRows >0)
+                    Toast.makeText(MainActivity.this,
+                            "Data deleted",Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(MainActivity.this,
+                            "Data delete failed",Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 
     public void showMessage(String title, String message){
@@ -70,4 +106,6 @@ public class MainActivity extends AppCompatActivity {
         builder.setMessage(message);
         builder.show();
     }
+
+
 }
